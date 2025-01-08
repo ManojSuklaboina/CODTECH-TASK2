@@ -1,0 +1,58 @@
+#code tech task2 manoj
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.datasets import fetch_california_housing
+
+housing = fetch_california_housing()
+
+data = pd.DataFrame(housing.data, columns=housing.feature_names)
+data['PRICE'] = housing.target  # Add the target column (median house value)
+
+
+print("Dataset Shape:", data.shape)
+print("Dataset Info:\n")
+print(data.info())
+print("\nFirst Few Rows of the Dataset:\n", data.head())
+
+print("\nMissing Values in Each Column:\n", data.isnull().sum())
+
+
+print("\nDescriptive Statistics:\n", data.describe())
+
+plt.figure(figsize=(16, 8))
+data.hist(bins=30, figsize=(16, 12), edgecolor='black')
+plt.suptitle("Histograms of Features")
+plt.show()
+
+plt.figure(figsize=(8, 6))
+sns.scatterplot(x=data['MedInc'], y=data['PRICE'], color='blue')
+plt.title("Relationship between MedInc (Median Income) and PRICE")
+plt.xlabel("Median Income (MedInc)")
+plt.ylabel("House Price")
+plt.show()
+
+plt.figure(figsize=(8, 6))
+sns.scatterplot(x=data['AveRooms'], y=data['PRICE'], color='red')
+plt.title("Relationship between AveRooms (Average Rooms) and PRICE")
+plt.xlabel("Average Rooms (AveRooms)")
+plt.ylabel("House Price")
+plt.show()
+
+correlation_matrix = data.corr()
+
+plt.figure(figsize=(12, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f')
+plt.title("Correlation Matrix")
+plt.show()
+
+plt.figure(figsize=(16, 10))
+data.boxplot(column=['MedInc', 'AveRooms', 'HouseAge', 'PRICE'], grid=False)
+plt.title("Boxplots of Selected Features")
+plt.show()
+print("\nInsights from EDA:")
+print("1. Strong positive correlation between MedInc (Median Income) and PRICE.")
+print("2. Weak correlation between AveRooms (Average Rooms) and PRICE.")
+print("3. Outliers are present in features like AveRooms and HouseAge, which may need preprocessing.")
