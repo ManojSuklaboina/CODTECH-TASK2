@@ -9,6 +9,7 @@ OVER VIEW OF THE PROJECT:
 project:exploratory data analysis
 
 ![image alt](https://github.com/ManojSuklaboina/CODTECH-TASK2/blob/187f9e1a0c4af7c3debe5abc0d4be2112c1bad82/eda1.png)
+![image alt](https://github.com/ManojSuklaboina/CODTECH-TASK2/blob/8946600cd47afefbbb6cce3459b02488f2b7319f/eda2.png)
 
 ### **Overview of the Code**
 
