@@ -8,6 +8,8 @@ duration:Nov/30/2024 to jan/15/2025
 OVER VIEW OF THE PROJECT:
 project:exploratory data analysis
 
+![image alt](https://github.com/ManojSuklaboina/CODTECH-TASK2/blob/187f9e1a0c4af7c3debe5abc0d4be2112c1bad82/eda1.png)
+
 ### **Overview of the Code**
 
 This code performs **Exploratory Data Analysis (EDA)** on the **California Housing dataset**, which provides insights into house prices in California based on various factors like median income, house age, and average rooms. It uses Python libraries to explore the data's characteristics, visualize patterns, and identify relationships between features and house prices.
